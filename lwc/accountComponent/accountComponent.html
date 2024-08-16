@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Create Account">
+        <!-- Account Name -->
+        <lightning-input label="Account Name" value={accountName} onchange={handleAccountNameChange}></lightning-input>
+
+        <!-- Account Phone -->
+        <lightning-input label="Phone" value={accountPhone} onchange={handleAccountPhoneChange}></lightning-input>
+
+        <!-- Account Website -->
+        <lightning-input label="Website" value={accountWebsite} onchange={handleAccountWebsiteChange}></lightning-input>
+
+        <!-- Save Account Button -->
+        <lightning-button label="Save Account" onclick={handleSaveAccount} class="slds-var-m-top_small"></lightning-button>
+    </lightning-card>
+
+    <template if:true={accountId}>
+        <c-contact-component account-id={accountId}></c-contact-component>
+    </template>
+</template>

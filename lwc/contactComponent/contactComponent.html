@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Create Contacts">
+        <template for:each={contacts} for:item="contact">
+            <div key={contact.index} class="slds-var-p-around_small">
+                <!-- Contact First Name -->
+                <lightning-input label="First Name" value={contact.firstName} data-index={contact.index} onchange={handleFirstNameChange}></lightning-input>
+                
+                <!-- Contact Last Name -->
+                <lightning-input label="Last Name" value={contact.lastName} data-index={contact.index} onchange={handleLastNameChange}></lightning-input>
+                
+                <!-- Contact Email -->
+                <lightning-input label="Email" value={contact.email} data-index={contact.index} onchange={handleEmailChange}></lightning-input>
+                
+                <!-- Contact Phone -->
+                <lightning-input label="Phone" value={contact.phone} data-index={contact.index} onchange={handlePhoneChange}></lightning-input>
+            </div>
+        </template>
+
+        <!-- Add Contact Button -->
+        <lightning-button label="Add Contact" onclick={handleAddContact} class="slds-var-m-top_small" disabled={disableAddContact}></lightning-button>
+        
+        <!-- Save Contacts Button -->
+        <lightning-button label="Save Contacts" onclick={handleSaveContacts} class="slds-var-m-top_small"></lightning-button>
+    </lightning-card>
+</template>
